@@ -1,0 +1,80 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #272727;
+  padding: 20px;
+
+  height: 80px;
+}
+.content-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 670px;
+  text-decoration: none;
+}
+.content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  color: white;
+
+  min-width: 110px;
+  font-size: 18px;
+  text-decoration: none;
+}
+.header-logo {
+  height: 40px;
+  width: 100px;
+}
+.logout-button {
+  border: 0px none transparent;
+  background-color: #6366f1;
+  border-radius: 4px;
+  color: white;
+  font-family: 'roboto';
+  padding: 5px;
+  width: 80px;
+  margin-left: 80px;
+}
+.mobile-icons-container {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  min-width: 120px;
+
+  font-size: 25px;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+.icon-delete-button {
+  background-color: transparent;
+  border: 0px none transparent;
+  color: white;
+
+  font-size: 24px;
+}
+
+@media all and (min-width: 768px) {
+  .mobile-icons-container {
+    display: none;
+  }
+}
+@media all and (max-width: 767px) {
+  .content-button-container {
+    display: none;
+  }
+}

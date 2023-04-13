@@ -1,0 +1,153 @@
+.job-bg-container {
+  background-color: #000000;
+  background-size: cover;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.profile-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  background-size: cover;
+
+  height: 220px;
+  width: 300px;
+
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.profile-image {
+  height: 50px;
+  width: 50px;
+}
+.profile-heading {
+  font-size: 22px;
+}
+.profile-para {
+  font-size: 12px;
+  margin-top: 0px;
+}
+.horizontal-line {
+  min-width: 290px;
+  max-width: 325px;
+
+  margin-top: 15px;
+  margin-bottom: 10px;
+
+  margin-left: 5px;
+}
+.first-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding: 10px;
+}
+.second-container {
+  padding: 10px;
+}
+.filter-container {
+  color: white;
+
+  font-family: 'roboto';
+  margin-left: 10px;
+}
+.filter-heading {
+  font-size: 18px;
+}
+.input-type-element {
+  margin-right: 10px;
+}
+label {
+  font-size: 12px;
+}
+.input-para-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.search-input-element {
+  background-color: transparent;
+  outline: none;
+  border: 0px none transparent;
+
+  padding: 5px;
+  padding-left: 10px;
+  min-width: 250px;
+
+  color: white;
+}
+.search-container {
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #64748b;
+  height: 30px;
+
+  min-width: 290px;
+  max-width: 325px;
+
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.search-icon {
+  background-color: #272727;
+  padding: 5px;
+  font-size: 22px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 37px;
+  height: 28.5px;
+
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+@media all and (max-width: 767px) {
+  .profile-container {
+    max-height: 160px;
+    min-width: 325px;
+    max-width: 340px;
+  }
+  .job-bg-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .search-input-element {
+    order: -1;
+  }
+  .search-container {
+    order: -1;
+
+    margin-bottom: 10px;
+    margin-left: 15px;
+
+    min-width: 300px;
+    max-width: 300px;
+  }
+  .search-icon {
+    margin-left: 10px;
+  }
+}
