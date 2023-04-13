@@ -55,6 +55,15 @@
 }
 .second-container {
   padding: 10px;
+  color: white;
+  font-family: 'roboto';
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  overflow-y: auto;
 }
 .filter-container {
   color: white;
@@ -102,8 +111,8 @@ label {
   border: 1px solid #64748b;
   height: 30px;
 
-  min-width: 290px;
-  max-width: 325px;
+  min-width: 280px;
+  max-width: 300px;
 
   margin-left: 10px;
   margin-top: 10px;
@@ -117,17 +126,20 @@ label {
   justify-content: center;
   align-items: center;
 
+  margin-left: 10px;
+
   width: 37px;
   height: 28.5px;
 
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
 }
+
 @media all and (max-width: 767px) {
   .profile-container {
     max-height: 160px;
-    min-width: 325px;
-    max-width: 340px;
+    min-width: 320px;
+    max-width: 330px;
   }
   .job-bg-container {
     display: flex;
@@ -141,11 +153,10 @@ label {
   .search-container {
     order: -1;
 
-    margin-bottom: 10px;
-    margin-left: 15px;
+    margin-bottom: 20px;
 
     min-width: 300px;
-    max-width: 300px;
+    max-width: 310px;
   }
   .search-icon {
     margin-left: 10px;

@@ -2,6 +2,7 @@ import {BiSearchAlt} from 'react-icons/bi'
 
 import {Component} from 'react'
 import Header from '../Header'
+import JobItem from '../JobItem'
 
 import './index.css'
 
@@ -12,9 +13,23 @@ const profile = {
   shortBio: 'Lead Software Developer and AI-ML expert',
 }
 
+const job = {
+  companyLogoUrl:
+    'https://assets.ccbp.in/frontend/react-js/jobby-app/facebook-img.png',
+  employmentType: 'Full Time',
+  id: 'd6019453-f864-4a2f-8230-6a9642a59466',
+  jobDescription:
+    'We’re in search of a Back-End Software Engineer that specializes in server-side components. In this role, you’ll primarily work in NodeJs, SQL Lite, Python, AWS and GO and will bring a depth of knowledge on basic algorithms and data structures. As a Back-End Engineer, you might be architecting new features for our customers.',
+  location: 'Bangalore',
+  packagePerAnnum: '21 LPA',
+  rating: 4,
+  title: 'Backend Engineer',
+}
+
 export default class Jobs extends Component {
   render() {
     const {name, profileImageUrl, shortBio} = profile
+
     return (
       <>
         <Header />
@@ -79,54 +94,56 @@ export default class Jobs extends Component {
                 <input
                   name="salary"
                   className="input-type-element"
-                  id="fulltime"
+                  id="10"
                   type="radio"
                 />
-                <label htmlFor="fulltime">10LPA and above</label>
+                <label htmlFor="10">10LPA and above</label>
               </div>
               <div className="input-para-container">
                 <input
                   name="salary"
                   className="input-type-element"
-                  id="parttime"
+                  id="20"
                   type="radio"
                 />
-                <label htmlFor="parttime">20LPA and above</label>
+                <label htmlFor="20">20LPA and above</label>
               </div>
               <div className="input-para-container">
                 <input
                   name="salary"
                   className="input-type-element"
-                  id="freelance"
+                  id="30"
                   type="radio"
                 />
-                <label htmlFor="freelance">30LPA and above</label>
+                <label htmlFor="30">30LPA and above</label>
               </div>
               <div className="input-para-container">
                 <input
                   name="salary"
                   className="input-type-element"
-                  id="internship"
+                  id="40"
                   type="radio"
                 />
-                <label htmlFor="internship">40LPA and above</label>
+                <label htmlFor="40">40LPA and above</label>
+              </div>
+            </div>
+            <div className="search-container">
+              <input
+                className="search-input-element"
+                type="search"
+                placeholder="Search"
+              />
+
+              <div className="search-icon">
+                <BiSearchAlt />
               </div>
             </div>
           </div>
 
-          <div className="search-container">
-            <input
-              className="search-input-element"
-              type="search"
-              placeholder="Search"
-            />
-
-            <div className="search-icon">
-              <BiSearchAlt />
-            </div>
-          </div>
           <div className="second-container">
-            <h1>hello</h1>
+            <JobItem job={job} />
+            <JobItem job={job} />
+            <JobItem job={job} />
           </div>
         </div>
       </>
