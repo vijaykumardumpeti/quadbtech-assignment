@@ -29,6 +29,7 @@
   justify-content: center;
   align-items: flex-start;
 }
+
 .profile-image {
   height: 50px;
   width: 50px;
@@ -73,6 +74,7 @@
 }
 .filter-container {
   color: white;
+  list-style-type: none;
 
   font-family: 'roboto';
   margin-left: 10px;
@@ -235,5 +237,8 @@ label {
   .loader {
     height: 80px;
     width: 100px;
+  }
+  .search-button {
+    margin-right: -6px;
   }
 }

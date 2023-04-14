@@ -10,6 +10,43 @@ import JobItem from '../JobItem'
 
 import './index.css'
 
+const employmentTypesList = [
+  {
+    label: 'Full Time',
+    employmentTypeId: 'FULLTIME',
+  },
+  {
+    label: 'Part Time',
+    employmentTypeId: 'PARTTIME',
+  },
+  {
+    label: 'Freelance',
+    employmentTypeId: 'FREELANCE',
+  },
+  {
+    label: 'Internship',
+    employmentTypeId: 'INTERNSHIP',
+  },
+]
+const salaryRangesList = [
+  {
+    salaryRangeId: '1000000',
+    label: '10 LPA and above',
+  },
+  {
+    salaryRangeId: '2000000',
+    label: '20 LPA and above',
+  },
+  {
+    salaryRangeId: '3000000',
+    label: '30 LPA and above',
+  },
+  {
+    salaryRangeId: '4000000',
+    label: '40 LPA and above',
+  },
+]
+
 const apiConstants = {
   initial: 'INITIAL',
   inProgress: 'IN_PROGRESS',
@@ -24,7 +61,7 @@ export default class Jobs extends Component {
     apiStatus: apiConstants.initial,
     profileApiStatus: apiConstants.initial,
 
-    employmentTypeList: ['FULLTIME', 'PARTTIME'],
+    employmentTypeList: [],
     minimumPackage: '',
     searchInput: '',
   }
@@ -187,6 +224,22 @@ export default class Jobs extends Component {
     this.enterFunc(event)
   }
 
+  employmentTypeChange = event => {
+    const {employmentTypeList} = this.state
+
+    this.setState(
+      {
+        employmentTypeList: [...employmentTypeList, event.target.value],
+      },
+      this.getJobsData,
+    )
+    console.log(event)
+  }
+
+  changeRadioInput = event => {
+    this.setState({minimumPackage: event.target.value}, this.getJobsData)
+  }
+
   render() {
     const {
       profileData,
@@ -244,38 +297,22 @@ export default class Jobs extends Component {
 
             <div className="filter-container">
               <h1 className="filter-heading">Type of Employment</h1>
-              <div className="input-para-container">
-                <input
-                  className="input-type-element"
-                  id="fulltime"
-                  type="checkbox"
-                />
-                <label htmlFor="fulltime">Full Time</label>
-              </div>
-              <div className="input-para-container">
-                <input
-                  className="input-type-element"
-                  id="parttime"
-                  type="checkbox"
-                />
-                <label htmlFor="parttime">Part Time</label>
-              </div>
-              <div className="input-para-container">
-                <input
-                  className="input-type-element"
-                  id="freelance"
-                  type="checkbox"
-                />
-                <label htmlFor="freelance">Freelance</label>
-              </div>
-              <div className="input-para-container">
-                <input
-                  className="input-type-element"
-                  id="internship"
-                  type="checkbox"
-                />
-                <label htmlFor="internship">Internship</label>
-              </div>
+
+              {employmentTypesList.map(object => {
+                const {employmentTypeId, label} = object
+                return (
+                  <li key={employmentTypeId} className="input-para-container">
+                    <input
+                      value={employmentTypeId}
+                      onChange={this.employmentTypeChange}
+                      className="input-type-element"
+                      id={employmentTypeId}
+                      type="checkbox"
+                    />
+                    <label htmlFor={employmentTypeId}>{label}</label>
+                  </li>
+                )
+              })}
             </div>
 
             <div>
@@ -284,42 +321,22 @@ export default class Jobs extends Component {
 
             <div className="filter-container">
               <h1 className="filter-heading">Salary Range</h1>
-              <div className="input-para-container">
-                <input
-                  name="salary"
-                  className="input-type-element"
-                  id="10"
-                  type="radio"
-                />
-                <label htmlFor="10">10LPA and above</label>
-              </div>
-              <div className="input-para-container">
-                <input
-                  name="salary"
-                  className="input-type-element"
-                  id="20"
-                  type="radio"
-                />
-                <label htmlFor="20">20LPA and above</label>
-              </div>
-              <div className="input-para-container">
-                <input
-                  name="salary"
-                  className="input-type-element"
-                  id="30"
-                  type="radio"
-                />
-                <label htmlFor="30">30LPA and above</label>
-              </div>
-              <div className="input-para-container">
-                <input
-                  name="salary"
-                  className="input-type-element"
-                  id="40"
-                  type="radio"
-                />
-                <label htmlFor="40">40LPA and above</label>
-              </div>
+              {salaryRangesList.map(object => {
+                const {salaryRangeId, label} = object
+                return (
+                  <li key={salaryRangeId} className="input-para-container">
+                    <input
+                      onChange={this.changeRadioInput}
+                      value={salaryRangeId}
+                      name="salary"
+                      className="input-type-element"
+                      id={salaryRangeId}
+                      type="radio"
+                    />
+                    <label htmlFor={salaryRangeId}>{label}</label>
+                  </li>
+                )
+              })}
             </div>
             <div className="search-container">
               <input

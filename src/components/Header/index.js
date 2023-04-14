@@ -14,9 +14,15 @@ const Header = props => {
     history.replace('/login')
   }
 
+  const redirectToHomeRoute = () => {
+    const {history} = props
+    history.replace('/')
+  }
+
   return (
     <nav className="header-container">
       <img
+        onClick={redirectToHomeRoute}
         className="header-logo"
         alt="website logo"
         src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
