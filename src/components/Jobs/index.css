@@ -8,13 +8,17 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+
+  min-height: 100vh;
 }
 .profile-container {
   background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
   background-size: cover;
 
-  height: 220px;
+  height: 180px;
   width: 300px;
+
+  margin-bottom: 10px;
 
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -60,10 +64,12 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 
   overflow-y: auto;
+
+  list-style-type: none;
 }
 .filter-container {
   color: white;
@@ -134,12 +140,62 @@ label {
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
 }
+.profile-error-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  height: 160px;
+
+  width: 330px;
+}
+.retry-button {
+  color: white;
+  background-color: #4f46e5;
+  border: 0px none transparent;
+  font-family: 'roboto';
+  padding: 5px;
+  border-radius: 5px;
+  width: 60px;
+}
+.failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.api-heading {
+  text-align: center;
+}
+.api-para {
+  text-align: center;
+  margin-top: 0px;
+}
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 250px;
+  margin-left: 350px;
+}
+.loader {
+  height: 100px;
+  width: 120px;
+}
+.search-button {
+  background-color: transparent;
+  color: white;
+  border: 0px none transparent;
+}
 
 @media all and (max-width: 767px) {
   .profile-container {
     max-height: 160px;
-    min-width: 320px;
-    max-width: 330px;
+    min-width: 310px;
+    max-width: 320px;
   }
   .job-bg-container {
     display: flex;
@@ -160,5 +216,24 @@ label {
   }
   .search-icon {
     margin-left: 10px;
+  }
+  .failure-image {
+    width: 320px;
+    text-align: center;
+  }
+  .api-heading {
+    font-size: 15px;
+  }
+  .api-para {
+    font-size: 12px;
+    width: 190px;
+  }
+  .loader-container {
+    margin-top: 10px;
+    margin-left: 100px;
+  }
+  .loader {
+    height: 80px;
+    width: 100px;
   }
 }
