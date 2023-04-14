@@ -53,9 +53,9 @@ const App = () => (
   <>
     <Switch>
       <Route exact path="/login" component={Login} />
-      <ProtectedRoute exact path="/ss" component={Home} />
+      <ProtectedRoute exact path="/" component={Home} />
       <ProtectedRoute exact path="/jobs" component={Jobs} />
-      <ProtectedRoute exact path="/" component={JobItemDetails} />
+      <ProtectedRoute exact path="/jobs/:id" component={JobItemDetails} />
     </Switch>
   </>
 )

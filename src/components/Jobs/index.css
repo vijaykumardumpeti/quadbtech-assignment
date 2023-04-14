@@ -192,7 +192,10 @@ label {
   color: white;
   border: 0px none transparent;
 }
-
+.link-navigation {
+  text-decoration: none;
+  color: white;
+}
 @media all and (max-width: 767px) {
   .profile-container {
     max-height: 160px;

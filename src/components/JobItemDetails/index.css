@@ -34,12 +34,15 @@
   justify-content: space-between;
   align-items: center;
 
-  width: 46px;
+  min-width: 48px;
   font-size: 15px;
 
   color: #4f46e5;
   font-weight: bold;
+
+  text-decoration: none;
 }
+
 .box3-item {
   display: flex;
   flex-direction: row;
@@ -104,7 +107,8 @@
 .company-room {
   border-radius: 10px;
 
-  height: 150px;
+  height: 180px;
+  width: 270px;
 }
 .similar-jobs-container {
   list-style-type: none;
@@ -143,6 +147,14 @@
   margin-bottom: -10px;
   font-size: 22px;
   font-family: 'roboto';
+}
+.loader-containers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 200px;
 }
 @media all and (max-width: 767px) {
   .job-detail-container {

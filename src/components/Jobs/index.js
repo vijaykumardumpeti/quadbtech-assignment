@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 import {BiSearchAlt} from 'react-icons/bi'
@@ -87,7 +88,6 @@ export default class Jobs extends Component {
     const response = await fetch(url, options)
 
     const data = await response.json()
-    console.log(data)
 
     if (response.ok === true) {
       const profileData = {
@@ -167,7 +167,9 @@ export default class Jobs extends Component {
   successView = jobsList => {
     if (jobsList.length !== 0) {
       return jobsList.map(jobObject => (
-        <JobItem key={jobObject.id} jobObject={jobObject} />
+        <Link className="link-navigation" to={`jobs/${jobObject.id}`}>
+          <JobItem key={jobObject.id} jobObject={jobObject} />
+        </Link>
       ))
     }
     return (
@@ -233,7 +235,6 @@ export default class Jobs extends Component {
       },
       this.getJobsData,
     )
-    console.log(event)
   }
 
   changeRadioInput = event => {
@@ -248,10 +249,6 @@ export default class Jobs extends Component {
       jobsList,
       searchInput,
     } = this.state
-
-    console.log(profileData)
-    console.log(apiStatus)
-    console.log(jobsList)
 
     this.switchMethod = () => {
       switch (apiStatus) {
