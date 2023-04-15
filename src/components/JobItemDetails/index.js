@@ -84,7 +84,7 @@ export default class JobItemDetails extends Component {
   }
 
   getJobItemDetailsObject = async () => {
-    const jwtToken = Cookies.get('vijayToken')
+    const jwtToken = Cookies.get('jwt_token')
 
     this.setState({apiStatus: apiConstants.inProgress})
 
@@ -169,7 +169,11 @@ export default class JobItemDetails extends Component {
       <>
         <li key={id} className="job-detail-container">
           <div className="box1">
-            <img className="company-logo" alt="job" src={companyLogoUrl} />
+            <img
+              className="company-logo"
+              alt="job details company logo"
+              src={companyLogoUrl}
+            />
             <div className="title-rating-container">
               <h1 className="title">{title}</h1>
               <div className="rating-container">
@@ -218,7 +222,7 @@ export default class JobItemDetails extends Component {
             <h1 className="skills-heading">Skills</h1>
             <ul className="unordered-skills-container">
               {skills.map(o => (
-                <li className="skill-list-item">
+                <li key={o.name} className="skill-list-item">
                   <img className="skill-image" alt={o.name} src={o.imageUrl} />
                   <p className="skill-name">{o.name}</p>
                 </li>
@@ -230,7 +234,11 @@ export default class JobItemDetails extends Component {
               <h1 className="skills-heading">Life at Company</h1>
               <p className="description-para-item">{description}</p>
             </div>
-            <img className="company-room" alt="s" src={imageUrl} />
+            <img
+              className="company-room"
+              alt="life at company"
+              src={imageUrl}
+            />
           </div>
         </li>
         <div className="similar-bg-container">
@@ -245,7 +253,7 @@ export default class JobItemDetails extends Component {
                   <div className="box1">
                     <img
                       className="company-logo"
-                      alt="job"
+                      alt="similar job company logo"
                       src={similarJobObject.companyLogoUrl}
                     />
                     <div className="title-rating-container">
@@ -298,7 +306,7 @@ export default class JobItemDetails extends Component {
       />
       <h1 className="api-heading">Oops! Something Went Wrong</h1>
       <p className="api-para">
-        We cannot seem to find the page you are looking for.
+        We cannot seem to find the page you are looking for
       </p>
       <button
         onClick={this.getJobItemDetailsObject}
@@ -317,11 +325,7 @@ export default class JobItemDetails extends Component {
   )
 
   render() {
-    const {jobItemDetailsObject, apiStatus, data} = this.state
-
-    console.log(jobItemDetailsObject)
-    console.log(apiStatus)
-    console.log(data)
+    const {apiStatus} = this.state
 
     this.switchMethod = () => {
       switch (apiStatus) {

@@ -75,7 +75,7 @@ export default class Jobs extends Component {
   getProfileData = async () => {
     this.setState({profileApiStatus: apiConstants.inProgress})
 
-    const jwtToken = Cookies.get('vijayToken')
+    const jwtToken = Cookies.get('jwt_token')
 
     const options = {
       method: 'GET',
@@ -107,7 +107,7 @@ export default class Jobs extends Component {
     const {employmentTypeList, minimumPackage, searchInput} = this.state
     this.setState({apiStatus: apiConstants.inProgress})
 
-    const jwtToken = Cookies.get('vijayToken')
+    const jwtToken = Cookies.get('jwt_token')
     const url = `https://apis.ccbp.in/jobs?employment_type=${employmentTypeList.join()}&minimum_package=${minimumPackage}&search=${searchInput}`
     const options = {
       method: 'GET',
@@ -168,7 +168,7 @@ export default class Jobs extends Component {
     if (jobsList.length !== 0) {
       return jobsList.map(jobObject => (
         <Link className="link-navigation" to={`jobs/${jobObject.id}`}>
-          <JobItem key={jobObject.id} jobObject={jobObject} />
+          <JobItem jobObject={jobObject} />
         </Link>
       ))
     }
@@ -345,6 +345,7 @@ export default class Jobs extends Component {
               />
 
               <button
+                data-testid="searchButton"
                 onClick={this.getJobsData}
                 className="search-button"
                 type="button"

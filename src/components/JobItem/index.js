@@ -8,7 +8,7 @@ import './index.css'
 
 export default class JobItem extends Component {
   render() {
-    const {jobObject, key} = this.props
+    const {jobObject} = this.props
 
     const {
       companyLogoUrl,
@@ -18,12 +18,17 @@ export default class JobItem extends Component {
       packagePerAnnum,
       rating,
       title,
+      id,
     } = jobObject
 
     return (
-      <li key={key} className="job-item-container">
+      <li key={id} className="job-item-container">
         <div className="box1">
-          <img className="company-logo" alt="job" src={companyLogoUrl} />
+          <img
+            className="company-logo"
+            alt="company logo"
+            src={companyLogoUrl}
+          />
           <div className="title-rating-container">
             <h1 className="title">{title}</h1>
             <div className="rating-container">

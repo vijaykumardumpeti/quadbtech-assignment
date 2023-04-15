@@ -20,7 +20,7 @@ export default class Login extends Component {
 
   successView = jwtToken => {
     const {history} = this.props
-    Cookies.set('vijayToken', jwtToken, {expires: 40, path: '/'})
+    Cookies.set('jwt_token', jwtToken, {expires: 40, path: '/'})
     history.replace('/')
   }
 
@@ -84,7 +84,7 @@ export default class Login extends Component {
                 onChange={this.changePassword}
                 className="input-element"
                 id="password"
-                type="text"
+                type="password"
                 placeholder="Password"
               />
             </div>

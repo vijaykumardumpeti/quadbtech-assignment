@@ -10,7 +10,7 @@ import './index.css'
 const Header = props => {
   const logoutFunc = () => {
     const {history} = props
-    Cookies.remove('vijayToken')
+    Cookies.remove('jwt_token')
     history.replace('/login')
   }
 
@@ -21,40 +21,52 @@ const Header = props => {
 
   return (
     <nav className="header-container">
-      <img
-        onClick={redirectToHomeRoute}
-        className="header-logo"
-        alt="website logo"
-        src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-      />
+      <Link className="link" to="/">
+        <img
+          onClick={redirectToHomeRoute}
+          className="header-logo"
+          alt="website logo"
+          src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+        />
+      </Link>
       <div className="content-button-container">
-        <div className="content-container">
-          <Link to="/">
-            <p className="link">Home</p>
-          </Link>
-          <Link to="/jobs">
-            <p className="link">Jobs</p>
-          </Link>
-        </div>
+        <ul className="content-container">
+          <li>
+            <Link to="/">
+              <p className="link">Home</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/jobs">
+              <p className="link">Jobs</p>
+            </Link>
+          </li>
+        </ul>
         <button onClick={logoutFunc} className="logout-button" type="button">
           Logout
         </button>
       </div>
-      <div className="mobile-icons-container">
-        <Link className="link" to="/">
-          <AiFillHome />
-        </Link>
-        <Link className="link" to="/jobs">
-          <BsBriefcaseFill />
-        </Link>
-        <button
-          onClick={logoutFunc}
-          className="icon-delete-button"
-          type="button"
-        >
-          <FiLogOut />
-        </button>
-      </div>
+      <ul className="mobile-icons-container">
+        <li>
+          <Link className="link" to="/">
+            <AiFillHome />
+          </Link>
+        </li>
+        <li>
+          <Link className="link" to="/jobs">
+            <BsBriefcaseFill />
+          </Link>
+        </li>
+        <li>
+          <button
+            onClick={logoutFunc}
+            className="icon-delete-button"
+            type="button"
+          >
+            <FiLogOut />
+          </button>
+        </li>
+      </ul>
     </nav>
   )
 }

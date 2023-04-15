@@ -26,9 +26,11 @@
 
   color: white;
 
-  min-width: 110px;
+  min-width: 160px;
   font-size: 18px;
   text-decoration: none;
+
+  list-style-type: none;
 }
 .header-logo {
   height: 40px;
@@ -51,9 +53,10 @@
   justify-content: space-between;
   align-items: center;
 
-  min-width: 120px;
+  min-width: 160px;
 
   font-size: 25px;
+  list-style-type: none;
 }
 
 .link {
