@@ -22,12 +22,17 @@ const Header = props => {
   return (
     <nav className="header-container">
       <Link className="link" to="/">
-        <img
-          onClick={redirectToHomeRoute}
-          className="header-logo"
-          alt="website logo"
-          src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-        />
+        <div className="logo-container">
+          <img
+            onClick={redirectToHomeRoute}
+            className="website-logo"
+            alt="website logo"
+            src="https://i.imgur.com/gL9EszK.png"
+          />
+          <p className="c-domain">
+            <span className="c-name">quadb</span>.in
+          </p>
+        </div>
       </Link>
       <div className="content-button-container">
         <ul className="content-container">

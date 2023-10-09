@@ -215,3 +215,12 @@
     margin-right: 100px;
   }
 }
+.apply-button {
+  font-family: 'caveat';
+  padding: 10px;
+  border: 0px none transparent;
+  background-color: #4f46e5;
+  color: white;
+  border-radius: 5px;
+  width: 60px;
+}

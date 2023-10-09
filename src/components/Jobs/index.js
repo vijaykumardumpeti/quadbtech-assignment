@@ -287,10 +287,8 @@ export default class Jobs extends Component {
         <Header />
         <div className="job-bg-container">
           <div className="first-container">
-            <div className="profile-error-container">{this.profileSwith()}</div>
-            <div>
-              <hr className="horizontal-line" />
-            </div>
+            {/* <div className="profile-error-container">{this.profileSwith()}</div> */}
+            <div>{/* <hr className="horizontal-line" /> */}</div>
 
             <div className="filter-container">
               <h1 className="filter-heading">Type of Employment</h1>

@@ -1,5 +1,5 @@
 .login-container {
-  background-color: #000000;
+  background-color: #e9e1e1;
   height: 100vh;
 
   display: flex;
@@ -109,4 +109,22 @@
     width: 220px;
     font-size: 12px;
   }
+}
+
+.logo-container {
+  line-height: 0px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-domain {
+  line-height: 0px;
+  font-size: 10px;
+  color: black;
+}
+.c-name {
+  color: #3492eb;
 }

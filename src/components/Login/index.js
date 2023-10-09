@@ -60,11 +60,17 @@ export default class Login extends Component {
     return (
       <div className="login-container">
         <div className="login-card">
-          <img
-            className="website-logo"
-            alt="website logo"
-            src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-          />
+          <div className="logo-container">
+            <img
+              className="website-logo"
+              alt="website logo"
+              src="https://i.imgur.com/gL9EszK.png"
+            />
+            <p className="c-domain">
+              <span className="c-name">quadb</span>.in
+            </p>
+          </div>
+
           <form onSubmit={this.submitFormData} className="form-container">
             <div className="input-container">
               <label htmlFor="username">USERNAME</label>

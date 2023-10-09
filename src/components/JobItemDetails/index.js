@@ -3,6 +3,8 @@ import Cookies from 'js-cookie'
 
 import Loader from 'react-loader-spinner'
 
+import {Link} from 'react-router-dom'
+
 import {AiFillStar} from 'react-icons/ai'
 import {BsBriefcaseFill} from 'react-icons/bs'
 import {GoLocation} from 'react-icons/go'
@@ -165,6 +167,7 @@ export default class JobItemDetails extends Component {
       lifeAtCompany,
     } = jobDetails
     const {description, imageUrl} = lifeAtCompany
+    console.log(companyWebsiteUrl)
     return (
       <>
         <li key={id} className="job-detail-container">
@@ -202,16 +205,22 @@ export default class JobItemDetails extends Component {
           </div>
           <div className="box3-item">
             <h1 className="description-heading">Description</h1>
-
-            <a
-              className="link-container"
-              target="_blank"
-              rel="noreferrer"
-              href={companyWebsiteUrl}
-            >
-              <p>Visit</p>
-              <BiLinkExternal />
-            </a>
+            <div>
+              <Link to="/apply">
+                <button className="apply-button" type="button">
+                  Apply
+                </button>
+              </Link>
+              <a
+                className="link-container"
+                target="_blank"
+                rel="noreferrer"
+                href={companyWebsiteUrl}
+              >
+                <p>Visit</p>
+                <BiLinkExternal />
+              </a>
+            </div>
           </div>
 
           <div>

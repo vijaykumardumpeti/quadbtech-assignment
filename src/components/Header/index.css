@@ -81,3 +81,21 @@
     display: none;
   }
 }
+
+.logo-container {
+  line-height: 0px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-domain {
+  line-height: 0px;
+  font-size: 10px;
+  color: black;
+}
+.c-name {
+  color: #3492eb;
+}
